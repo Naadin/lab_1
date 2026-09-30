@@ -16,7 +16,7 @@
 docker version
 ```
 
-![]()
+![231224.png](231224.png)
 
 * **Запустим выбранный образ в конкретном теге(`nginx:alpine`)**
 
@@ -24,7 +24,12 @@ docker version
 docker run -d --name test-nginx nginx:alpine
 ```
 
-![]()
+* **Отобразим работающие контейнеры**
+```bash
+docker ps
+```
+
+![231823.png](231823.png)
 
 [Запуск конкретного тега](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md)
 

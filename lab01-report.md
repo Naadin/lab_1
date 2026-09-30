@@ -13,6 +13,7 @@
 * **Определим версии клиента и демона Docker.**
   
 ```bash
+#выведем информацию о версии docker
 docker version
 ```
 
@@ -41,8 +42,10 @@ docker ps
 #запуск на порту 8080
 docker run -d --name lab-web-naadin -p 8080:80 nginx:alpine
 ```
-![233422.png](233422.png)
 ![233524.png](233524.png)
+![233422.png](233422.png)
+
+* Затем перезапуск на порту 1111
 
 ```bash
 #запуск на порту 1111
@@ -50,7 +53,10 @@ docker run -d --name lab-web-naadin -p 1111:80 nginx:alpine
 #отобразим работающие контейнеры
 docker ps
 ```
-![]()
+![234249.png](234249.png)
+![234926.png](234926.png)
+
+* `test-nginx` нужен был нам для того, чтобы убедиться, что образ `nginx:alpine` запускается, поэтому, в дальнейшем он нам не понадобиться, можем удалять.
 
 ```bash
 #остановка работающего контейнера по имени
@@ -58,7 +64,7 @@ docker stop test-nginx
 #удаление остановленного контейнера
 docker rm test-nginx
 ```
-![]()
+![234938.png](234938.png)
 
 [Проброс портов](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/03_docker_run.md#3-%D0%BF%D1%80%D0%BE%D0%B1%D1%80%D0%BE%D1%81-%D0%BF%D0%BE%D1%80%D1%82%D0%BE%D0%B2--p), [именование контейнеров](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/03_docker_run.md#4-%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2---name)
 

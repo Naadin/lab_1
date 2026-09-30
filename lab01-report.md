@@ -41,15 +41,23 @@ docker ps
 #запуск на порту 8080
 docker run -d --name lab-web-naadin -p 8080:80 nginx:alpine
 ```
-![]()
+![233422.png](233422.png)
+![233524.png](233524.png)
 
 ```bash
 #запуск на порту 1111
 docker run -d --name lab-web-naadin -p 1111:80 nginx:alpine
+#отобразим работающие контейнеры
+docker ps
 ```
 ![]()
 
-* Работающие контейнеры
+```bash
+#остановка работающего контейнера по имени
+docker stop test-nginx
+#удаление остановленного контейнера
+docker rm test-nginx
+```
 ![]()
 
 [Проброс портов](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/03_docker_run.md#3-%D0%BF%D1%80%D0%BE%D0%B1%D1%80%D0%BE%D1%81-%D0%BF%D0%BE%D1%80%D1%82%D0%BE%D0%B2--p), [именование контейнеров](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/03_docker_run.md#4-%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2---name)

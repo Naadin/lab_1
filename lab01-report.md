@@ -173,19 +173,31 @@ dir .\site
 ### 5) Логи и attach
 
 ```bash
-#Журнал контейнера
+#журнал контейнера
 docker logs --tail 10 lab-web-naadin
 ```
 
 ![]()
 
 ```bash
-#прикрепление к основному процессу контейнера с помощью attach
+#прикрепление к основному процессу контейнера с помощью `attach`
 docker attach lab-web-naadin
 ```
+![]()
+
+```bash
+#проверим, что контейнер работает после закрытия `attach`
+docker ps
+```
+![]()
 
 `Ctrl + P` + `Ctrl + Q` - отключиться от контейнера, не останавливая его. 
 `Ctrl + C` - остановит контейнер.
+* Использование этих сочетаний не сработало в PowerShell, поэтому пришлось перезапускать контейнер:
+
+```bash
+docker start lab-web-naadin
+```
 
 [Получение логов](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/03_docker_run.md#8-%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-docker-logs), [прикрепление и открепление от контейнера](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md#10-docker-attach-%D0%B8--d-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B5-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0)
 

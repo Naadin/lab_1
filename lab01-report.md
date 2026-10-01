@@ -56,7 +56,7 @@ docker ps
 ![234249.png](234249.png)
 ![234926.png](234926.png)
 
-* `test-nginx` нужен был нам для того, чтобы убедиться, что образ `nginx:alpine` запускается, поэтому, в дальнейшем он нам не понадобиться, можем удалять.
+* `test-nginx` нужен был нам для того, чтобы убедиться, что образ `nginx:alpine` запускается, поэтому, в дальнейшем он нам не понадобиться, можем удалять
 
 ```bash
 #остановка работающего контейнера по имени
@@ -77,6 +77,13 @@ mkdir site
 "naadin" | Set-Content .\site\index.html
 ```
 
+* Остановка и удаление предыдущего контейнера
+```bash
+docker stop lab-web-naadin
+docker rm lab-web-naadin
+```
+![]()
+
 * Перезапуск `lab-web-naadin`, смонтировав папку как `read‑only`
 ```bash
 #монтирование папки через :ro
@@ -90,6 +97,7 @@ docker run -d --name lab-web-naadin -p 8080:80 -v "${PWD}\site:/usr/share/nginx/
 "anin" | Set-Content .\site\index.html
 ```
 
+![]()
 ![]()
 
 * Почему данные переживут удаление контейнера?

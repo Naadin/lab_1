@@ -82,7 +82,7 @@ mkdir site
 docker stop lab-web-naadin
 docker rm lab-web-naadin
 ```
-![]()
+![083356.png](083356.png)
 
 * Перезапуск `lab-web-naadin`, смонтировав папку как `read‑only`
 ```bash
@@ -90,15 +90,16 @@ docker rm lab-web-naadin
 docker run -d --name lab-web-naadin -p 8080:80 -v "${PWD}\site:/usr/share/nginx/html:ro" nginx:alpine 
 ```
 
-![]()
+![083001.png](083001.png)
 
 * Редактирование текста
 ```bash
 "anin" | Set-Content .\site\index.html
 ```
 
-![]()
-![]()
+![083032.png](083032.png)
+![083426.png](083426.png)
+
 
 * Почему данные переживут удаление контейнера?
 

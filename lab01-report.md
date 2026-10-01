@@ -232,13 +232,21 @@ docker ps -a
 * Используем команды для удаления контейнеров и образов
 
 ```bash
+#остановка контейнеров
+docker stop lab-web-naadin naadin
 #удаление контейнеров
-docker rm -f lab-web-naadin naadin test-nginx
+docker rm lab-web-naadin naadin
 
-#удаление образов
-docker rmi alpine nginx:alpine
+#удаление образа
+docker rmi nginx:alpine
+
+#посмотрим список всех контейнеров
+docker ps -a
+#посмотрим список загруженных образов
+docker images
 ```
-![]()
+
+![141140.png](141140.png)
 
 [Удаление контейнеров](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md#4-docker-rm), [удаление образов](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md#4-docker-rm](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md#6-docker-rmi))
 

@@ -206,8 +206,7 @@ docker start lab-web-naadin
 
 ```bash
 #запуск контейнера с текстом "pervaya"
-docker run --name naadin nginx:alpine echo
-"pervaya"
+docker run --name naadin nginx:alpine echo "pervaya"
 
 #вывод статуса контейнера после выполнения
 docker ps -a

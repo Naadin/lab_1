@@ -109,7 +109,7 @@ docker run -d --name lab-web-naadin -p 8080:80 -v "${PWD}\site:/usr/share/nginx/
 
 ### 4) Интерактив / exec
 
-* Вход внутрь работающего контейнера lab-web-naadin интерактивно
+* Заходим в работающий контейнер lab-web-naadin интерактивно
 ```bash
 docker exec -it lab-web-naadin /bin/sh
 
@@ -121,19 +121,50 @@ ls -la
 ```
 ![]()
 
-* Создание файла при :ro
-
 ```bash
+#создание файла при :ro
 touch anin.txt
 ```
-
+```bash
+#получили ошибку, выходим
+touch anin.txt
+```
 ![]()
-* Удаление :ro 
-  
+
+```bash
+#останавливаем и удаляем контейнер
+docker stop lab-web-naadin
+docker rm lab-web-naadin
+```
+![]()
+
+* Пересоздаем контейнер в режиме RW
+```bash
+docker run -d --name lab-web-naadin -p 8080:80 -v "${PWD}\site:/usr/share/nginx/html" nginx:alpine
+```
+```bash
+docker exec -it lab-web-naadin /bin/sh
+
+#переходим в каталог со статикой
+cd /usr/share/nginx/html
+
+#создание файла
+touch anin.txt
+
+#просмотр листинга каталога
+ls -la
+
+#выход
+exit
+```
 ![]()
 
 * Файл на хосте после режима RW
-
+```bash
+#посмотрим содержимое папки site в текущем каталоге
+dir .\site
+```
+![]()
 ![]()
 
 [Интерактивный режим](https://github.com/tiranousor/os-modern-docker-course/blob/main/4-course/docker-and-containers/lectures/02_commands.md#%D1%88%D0%B0%D0%B3-3-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%B2-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%89%D0%B5%D0%BC-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B5-docker-exec)
